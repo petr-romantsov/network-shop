@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "stylelint": "stylelint \"**/*.{css,scss,sass}\"",
+    "stylelint:fix": "stylelint \"**/*.{css,scss,sass}\" --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "16.2.4",
@@ -20,7 +26,28 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.3",
+    "postcss": "^8.5.14",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.11.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "stylelint-config-standard": "^40.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,sass}": [
+      "stylelint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,css,scss,sass,md,json,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }
