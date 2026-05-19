@@ -1,7 +1,22 @@
-import Image from 'next/image';
+import {
+  Container,
+  SubscriptionForm,
+  UiButton,
+  UiNavLink,
+  UiSliderButton,
+} from '@/core/components';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>
+    <Container>
+      <UiSliderButton direction="left" variant="bordered" />
+      <UiSliderButton direction="right" variant="bordered" />
+      <UiSliderButton direction="right" variant="basic" />
+      <UiSliderButton direction="left" variant="basic" />
+      <UiButton text="Button" variant="primary" />
+      <UiButton text="Button" asLink href="/somewhere" variant="secondary" />
+      <UiNavLink href="/somewhere" text="Link" />
+      <SubscriptionForm />
+    </Container>
   );
 }
