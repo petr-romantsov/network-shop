@@ -13,7 +13,7 @@ export const UiNavLink = ({ href, text, className }: UiNavLinkProps) => {
     <Link
       href={href}
       className={cn(
-        'text-sm font-medium text-black uppercase cursor-pointer hover:text-black/50 transition-colors ease-linear duration-300',
+        'text-sm font-medium text-black uppercase cursor-pointer hover:text-black/50 transition-colors ease-(--base-easing) duration-(--base-duration)',
         className
       )}
     >

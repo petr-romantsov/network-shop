@@ -11,9 +11,12 @@ body {
 }
 
 @theme {
-  --max-width: 1532px;
+  --max-width: 1200px;
   --color-black: #202020;
   --color-white: #fff;
   --color-border-gray: #e2e2e2;
   --color-error: #fd0000;
+
+  --base-duration: 200ms;
+  --base-easing: linear;
 }

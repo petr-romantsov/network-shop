@@ -20,9 +20,9 @@ const uiSliderButtonVariants = cva(
     variants: {
       variant: {
         basic:
-          'border-none hover:scale-[1.2] transition-transform ease-linear duration-300',
+          'border-none hover:scale-[1.2] transition-transform ease-(--base-easing) duration-(--base-duration)',
         bordered:
-          'border border-solid border-black rounded-sm hover:bg-black hover:text-white transition-colors ease-linear duration-300',
+          'border border-solid border-black rounded-sm hover:bg-black hover:text-white transition-colors ease-(--base-easing) duration-(--base-duration)',
       },
     },
     defaultVariants: {

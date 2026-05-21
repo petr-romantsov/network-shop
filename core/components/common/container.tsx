@@ -11,12 +11,7 @@ export const Container = ({
   className,
 }: PropsWithChildren<ContainerProps>) => {
   return (
-    <div
-      className={cn(
-        'mx-auto w-full max-w-[var(--max-width)] px-1 lg:px-41',
-        className
-      )}
-    >
+    <div className={cn('mx-auto w-full max-w-(--max-width) px-1', className)}>
       {children}
     </div>
   );

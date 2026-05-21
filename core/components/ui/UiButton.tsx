@@ -10,9 +10,9 @@ const uiButtonVariants = cva(
     variants: {
       variant: {
         primary:
-          'bg-white border border-solid border-black hover:bg-black hover:text-white transition-colors ease-linear duration-300',
+          'bg-white border border-solid border-black hover:bg-black hover:text-white transition-colors ease-linear duration-(--base-duration)',
         secondary:
-          'bg-white/50 border-none hover:bg-white/100 transition-colors ease-linear duration-300',
+          'bg-white/50 border-none hover:bg-white/100 transition-colors ease-(--base-easing) duration-(--base-duration)',
       },
     },
     defaultVariants: {
