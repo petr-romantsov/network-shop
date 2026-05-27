@@ -1,11 +1,9 @@
-import { Container, Footer, Header, SubscriptionForm } from '@/core/components';
+import { HeroSection } from '@/core/components/(homePage)/HeroSection/HeroSection';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <SubscriptionForm />
-      <Footer />
+      <HeroSection />
     </>
   );
 }

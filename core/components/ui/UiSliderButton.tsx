@@ -1,5 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
+import { cn } from '@/core/utils/helpers';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/public/assets/icons';
 
 type Direction = 'left' | 'right';
@@ -15,7 +16,7 @@ type BaseProps = VariantProps<typeof uiSliderButtonVariants> & {
 };
 
 const uiSliderButtonVariants = cva(
-  'size-[50px] flex items-center justify-center bg-transparent cursor-pointer color-black',
+  'size-[50px] flex items-center justify-center bg-transparent cursor-pointer',
   {
     variants: {
       variant: {
@@ -24,9 +25,14 @@ const uiSliderButtonVariants = cva(
         bordered:
           'border border-solid border-black rounded-sm hover:bg-black hover:text-white transition-colors ease-(--base-easing) duration-(--base-duration)',
       },
+      color: {
+        black: 'text-black',
+        white: 'text-white',
+      },
     },
     defaultVariants: {
       variant: 'basic',
+      color: 'black',
     },
   }
 );
@@ -36,13 +42,16 @@ type UiSliderButtonProps = BaseProps & React.HTMLAttributes<HTMLButtonElement>;
 export const UiSliderButton = ({
   direction,
   variant,
+  color,
+  className,
   onClick,
   ...props
 }: UiSliderButtonProps) => {
   return (
     <button
-      className={uiSliderButtonVariants({ variant })}
       {...props}
+      className={cn(uiSliderButtonVariants({ variant, color }), className)}
+      type="button"
       onClick={onClick}
     >
       {direction && icons[direction]}

@@ -1,0 +1,39 @@
+{
+  "heroSlides": [
+    {
+      "id": 1,
+      "image": "/assets/img/hero/heroSliderImage.png",
+      "title": "Новая женская коллекция",
+      "description": "Осень-зима 2022/23",
+      "position": "center"
+    },
+    {
+      "id": 2,
+      "title": "Новая женская коллекция",
+      "description": "Осень-зима 2022/23",
+      "position": "left"
+    },
+    {
+      "id": 3,
+      "title": "Новая женская коллекция",
+      "description": "Осень-зима 2022/23",
+      "position": "right"
+    }
+  ],
+  "collections": {
+    "male": [
+      "/assets/img/collections/male1.png",
+      "/assets/img/collections/male2.png",
+      "/assets/img/collections/male3.png",
+      "assets/img/collections/male4.png",
+      "assets/img/collections/male5.png"
+    ],
+    "female": [
+      "/assets/img/collections/female1.png",
+      "/assets/img/collections/female2.png",
+      "/assets/img/collections/female3.png",
+      "assets/img/collections/female4.png",
+      "assets/img/collections/female5.png"
+    ]
+  }
+}

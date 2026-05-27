@@ -15,8 +15,12 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.100.14",
+    "@tanstack/react-query-devtools": "^5.100.14",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "json-server": "^1.0.0-beta.15",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -25,6 +29,7 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4",
+    "@tanstack/eslint-plugin-query": "^5.100.14",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

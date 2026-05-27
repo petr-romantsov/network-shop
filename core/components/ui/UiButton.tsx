@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/core/utils/helpers';
 
 const uiButtonVariants = cva(
-  'text-base/[100%] font-medium color-black p-4 rounded-sm cursor-pointer ',
+  'text-base/[100%] font-medium text-black p-4 rounded-sm cursor-pointer ',
   {
     variants: {
       variant: {
@@ -27,37 +27,55 @@ type BaseProps = VariantProps<typeof uiButtonVariants> & {
 };
 
 type ButtonProps = BaseProps & {
-  asLink?: false;
+  buttonType?: 'button';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
+type NavLinkProps = BaseProps & {
+  buttonType: 'navLink';
+  href: string;
+} & Omit<React.ComponentProps<typeof Link>, 'href' | 'className'>;
+
 type LinkProps = BaseProps & {
-  asLink: true;
+  buttonType: 'link';
   href: string;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type UiButtonProps = ButtonProps | LinkProps;
+type UiButtonProps = ButtonProps | NavLinkProps | LinkProps;
 
 export const UiButton = (props: UiButtonProps) => {
   const { text, variant } = props;
 
-  if (props.asLink) {
-    const { href, asLink, className, ...linkProps } = props;
+  if (props.buttonType === 'link') {
+    const { href, buttonType, className, ...linkProps } = props;
+    return (
+      <a
+        href={href}
+        {...linkProps}
+        className={cn(uiButtonVariants({ variant }), className)}
+      >
+        {text}
+      </a>
+    );
+  }
+
+  if (props.buttonType === 'navLink') {
+    const { href, buttonType, className, ...navLinkProps } = props;
     return (
       <Link
         href={href}
+        {...navLinkProps}
         className={cn(uiButtonVariants({ variant }), className)}
-        {...linkProps}
       >
         {text}
       </Link>
     );
   }
 
-  const { className, asLink, onClick, ...buttonProps } = props;
+  const { buttonType, onClick, className, ...buttonProps } = props;
   return (
     <button
-      className={cn(uiButtonVariants({ variant }), className)}
       {...buttonProps}
+      className={cn(uiButtonVariants({ variant }), className)}
       onClick={onClick}
     >
       {text}
