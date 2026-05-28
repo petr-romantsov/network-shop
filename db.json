@@ -22,18 +22,48 @@
   ],
   "collections": {
     "male": [
-      "/assets/img/collections/male1.png",
-      "/assets/img/collections/male2.png",
-      "/assets/img/collections/male3.png",
-      "assets/img/collections/male4.png",
-      "assets/img/collections/male5.png"
+      {
+        "src": "/assets/img/collections/male1.png",
+        "alt": "Образ из мужской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/male2.png",
+        "alt": "Образ из мужской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/male3.png",
+        "alt": "Образ из мужской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/male4.png",
+        "alt": "Образ из мужской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/male5.png",
+        "alt": "Образ из мужской коллекции."
+      }
     ],
     "female": [
-      "/assets/img/collections/female1.png",
-      "/assets/img/collections/female2.png",
-      "/assets/img/collections/female3.png",
-      "assets/img/collections/female4.png",
-      "assets/img/collections/female5.png"
+      {
+        "src": "/assets/img/collections/female1.png",
+        "alt": "Образ из женской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/female2.png",
+        "alt": "Образ из женской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/female3.png",
+        "alt": "Образ из женской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/female4.png",
+        "alt": "Образ из женской коллекции."
+      },
+      {
+        "src": "/assets/img/collections/female5.png",
+        "alt": "Образ из женской коллекции."
+      }
     ]
   }
 }

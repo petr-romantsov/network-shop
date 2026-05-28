@@ -6,14 +6,24 @@ type HeroSlideContent = {
   position: 'center' | 'left' | 'right';
 };
 
-type Collection = string[];
+type CollectionImage = {
+  src: string;
+  alt: string;
+};
 
 type Api = {
   heroSlides: HeroSlideContent[];
   collections: {
-    male: Collection;
-    female: Collection;
+    male: CollectionImage[];
+    female: CollectionImage[];
   };
 };
 
-export type { Api, Collection, HeroSlideContent };
+type EndpointMap = {
+  heroSlides: Api['heroSlides'];
+  collections: Api['collections'];
+};
+
+type Endpoints = keyof EndpointMap;
+
+export type { Api, CollectionImage, EndpointMap, Endpoints, HeroSlideContent };

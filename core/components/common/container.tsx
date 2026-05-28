@@ -11,7 +11,12 @@ export const Container = ({
   className,
 }: PropsWithChildren<ContainerProps>) => {
   return (
-    <div className={cn('mx-auto w-full max-w-(--max-width) px-1', className)}>
+    <div
+      className={cn(
+        'mx-auto w-full max-w-(--max-width) px-4 md:px-0',
+        className
+      )}
+    >
       {children}
     </div>
   );
