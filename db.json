@@ -65,5 +65,77 @@
         "alt": "Образ из женской коллекции."
       }
     ]
-  }
+  },
+  "products": [
+    {
+      "id": 1,
+      "title": "Название товара",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product1.png",
+        "alt": "Название товара."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Slim Fit Beyaz Polo Yaka T-shirt",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product2.png",
+        "alt": "Slim Fit Beyaz Polo Yaka T-shirt"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Название товара",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product3.png",
+        "alt": "Название товара."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Название товара",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product4.png",
+        "alt": "Название товара."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Название товара",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product5.png",
+        "alt": "Название товара."
+      }
+    },
+    {
+      "id": 6,
+      "title": "Slim Fit Beyaz Polo Yaka T-shirt",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product2.png",
+        "alt": "Slim Fit Beyaz Polo Yaka T-shirt"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Название товара",
+      "originalPrice": 3500,
+      "discountPrice": 2500,
+      "image": {
+        "src": "/assets/img/products/product3.png",
+        "alt": "Название товара."
+      }
+    }
+  ]
 }

@@ -20,7 +20,7 @@ export const CollectionSection = () => {
   }
 
   return (
-    <section>
+    <section className="px-2">
       <Container>
         {images?.female && images.female.length > 0 && (
           <Collection collectionType="female" images={images.female} />

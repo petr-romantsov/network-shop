@@ -8,6 +8,8 @@ type EmblaContextValue = {
   emblaApi: EmblaCarouselType | undefined;
   scrollPrev: () => void;
   scrollNext: () => void;
+  canScrollPrev: boolean;
+  canScrollNext: boolean;
 };
 
 export const EmblaContext = createContext<EmblaContextValue | null>(null);

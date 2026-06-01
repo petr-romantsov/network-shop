@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { EmblaCarouselType } from 'embla-carousel';
+import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 
 import { cn } from '@/core/utils/helpers';
@@ -18,6 +18,7 @@ type EmblaProps = {
   className?: string;
   controls?: React.ReactNode;
   pagination?: boolean;
+  options?: EmblaOptionsType;
 };
 
 export const Embla = ({
@@ -25,10 +26,13 @@ export const Embla = ({
   className,
   controls,
   pagination = false,
+  options,
 }: PropsWithChildren<EmblaProps>) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [selectedSnap, setSelectedSnap] = useState<number>(0);
+  const [canScrollPrev, setCanScrollPrev] = useState<boolean>(false);
+  const [canScrollNext, setCanScrollNext] = useState<boolean>(false);
 
   const scrollTo = useCallback(
     (index: number) => emblaApi?.scrollTo(index),
@@ -48,23 +52,33 @@ export const Embla = ({
       setSelectedSnap(emblaApi.selectedScrollSnap());
     };
 
+    const updateScrollButtons = () => {
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+
     setupSnaps(emblaApi);
     setActiveSnap(emblaApi);
+    updateScrollButtons();
 
     emblaApi.on('reInit', setupSnaps);
     emblaApi.on('reInit', setActiveSnap);
+    emblaApi.on('reInit', updateScrollButtons);
+    emblaApi.on('select', updateScrollButtons);
     emblaApi.on('select', setActiveSnap);
 
     return () => {
       emblaApi.off('reInit', setupSnaps);
       emblaApi.off('reInit', setActiveSnap);
       emblaApi.off('select', setActiveSnap);
+      emblaApi.off('reInit', updateScrollButtons);
+      emblaApi.off('select', updateScrollButtons);
     };
   }, [emblaApi]);
 
   const contextValue = useMemo(
-    () => ({ emblaApi, scrollPrev, scrollNext }),
-    [emblaApi, scrollPrev, scrollNext]
+    () => ({ emblaApi, scrollPrev, scrollNext, canScrollPrev, canScrollNext }),
+    [emblaApi, scrollPrev, scrollNext, canScrollPrev, canScrollNext]
   );
 
   return (

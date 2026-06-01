@@ -1,10 +1,10 @@
 import { GridWithImages } from '@/core/components/common';
 import { UiButton } from '@/core/components/ui';
-import type { CollectionImage } from '@/core/types/api';
+import type { ImageData } from '@/core/types/api';
 
 type CollectionProps = {
   collectionType: 'female' | 'male';
-  images: CollectionImage[];
+  images: ImageData[];
 };
 
 export const Collection = ({ collectionType, images }: CollectionProps) => {

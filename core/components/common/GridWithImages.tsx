@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import { CollectionImage } from '@/core/types/api';
+import { ImageData } from '@/core/types/api';
 import { cn, getItemKey } from '@/core/utils/helpers';
 
 type GridWithImagesProps = {
-  images: CollectionImage[];
+  images: ImageData[];
 };
 
 const positionProperties: string[] = [

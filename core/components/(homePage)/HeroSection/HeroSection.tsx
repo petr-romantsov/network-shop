@@ -6,14 +6,14 @@ import { HeroSlide } from './HeroSlide';
 import { EmblaControls } from '../../common/(embla)/EmblaControls';
 
 export const HeroSection = () => {
-  const { data: heroSlides, isLoading, isError } = useHeroContent();
+  const { data: heroSlides, isLoading, isError, error } = useHeroContent();
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   if (isError || !heroSlides || heroSlides.length === 0) {
-    return null;
+    return <div>Error: {error?.message}</div>;
   }
 
   return (
